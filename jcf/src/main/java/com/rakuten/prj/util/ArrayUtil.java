@@ -3,7 +3,11 @@
  */
 package com.rakuten.prj.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import com.rakuten.prj.entity.Triplets;
 
 /**
  * @author vijaya
@@ -58,6 +62,40 @@ public class ArrayUtil {
 			}
 			
 		}
+	}
+	
+	public static List<Triplets> printTriplets(int[ ] data) { 
+		
+		
+		List<Triplets> result=new ArrayList<>();
+		//System.out.println("hi");
+		for (int i = 0; i < data.length; i++) {
+			
+			for (int j = i+1; j < data.length; j++) {
+				
+				for (int k = i+1; k < data.length; k++) {
+					if(data[i]+data[j]==data[k])
+					{
+						
+						//System.out.println(data[i]);
+						result.add(new Triplets(data[i],data[j],data[k]));
+					}
+				}
+				
+			}
+			
+			
+	
+			
+			
+			
+			
+			
+			
+		}
+		return result;
+		
+		
 	}
 
 }
